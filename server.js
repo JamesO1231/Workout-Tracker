@@ -11,15 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-var MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost/fitness';
-mongoose.connect(MONGODB_URL, {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-});
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/workout', { useNewUrlParser: true, useFindAndModify: false });
 
 app.use(require('./routes/index'));
 app.use(require('./routes/api/apiRoutes'));
 
-app.listen(PORT, function() {
+app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });

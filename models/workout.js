@@ -5,7 +5,7 @@ const workoutSchema = new Schema(
     {
         day: {
             type: Date,
-            default: () => new Date(),
+            default: Date.now,
         },
         exercises: [
             {
@@ -39,11 +39,6 @@ const workoutSchema = new Schema(
             }
         ]
     },
-    {
-        toJSON: {
-            virtuals: true,
-        }
-    }
 );
 
 workoutSchema.virtual('totalTime').get(function () {
