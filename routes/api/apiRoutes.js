@@ -3,20 +3,20 @@ const Workout = require('../../models/workout');
 
 
 router.get('/api/workouts', (req, res) => {
-    Workout.find({}).then(data => {
-        res.json(data);
+    Workout.find({}).then(Cluster0 => {
+        res.json(Cluster0);
     }).catch(err => {
         res.json(err);
     });
 });
 router.post('/api/workouts', ({ body }, res) => {
-    Workout.create(body).then(data => res.json(data)).catch(err => {
+    Workout.create(body).then(Cluster0 => res.json(Cluster0)).catch(err => {
         res.json(err);
     });
 });
 router.get('/api/workouts/range', (req, res) => {
-    Workout.find({}).limit(10).then(data => {
-        res.json(data);
+    Workout.find({}).limit(10).then(Cluster0 => {
+        res.json(Cluster0);
     }).catch(err => {
         res.json(err);
     });
@@ -30,7 +30,7 @@ router.put('/api/workouts/:id', ({ body,params }, res) => {
         {
             new: true, 
         }
-    ).then(data => res.json(data)).catch(err => {
+    ).then(Cluster0 => res.json(Cluster0)).catch(err => {
          res.json(err);
     });
 });
