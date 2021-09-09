@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/Cluster0',
+    process.env.MONGODB_URL || 'mongodb://localhost/Cluster0',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
